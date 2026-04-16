@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "taylkomb-cad-agent"
+version = "0.1.0"
+description = "Claude Code + MCP scaffold for TAYLKOMB parametric CAD generation"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+  { name = "Michael David Warren Jr. / TAYLKOMB LLC" }
+]
+dependencies = [
+  "mcp[cli]>=1.0.0,<2.0.0",
+  "cadquery>=2.5.2",
+  "pydantic>=2.7.0,<3.0.0",
+  "typer>=0.12.0,<1.0.0",
+  "rich>=13.7.0,<14.0.0",
+  "python-dotenv>=1.0.1,<2.0.0"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.2.0,<9.0.0"
+]
+
+[project.scripts]
+taylkomb-mcp = "taylkomb_mcp.server:main"
+taylkomb-run-variant = "taylkomb_mcp.cli:app"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

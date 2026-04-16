@@ -1,0 +1,11 @@
+{
+  "description": "Rev D sweep C",
+  "variants": [
+    { "variant_id": "C_main_01",   "part_name": "main_comb",    "overrides": {} },
+    { "variant_id": "C_wide_01",   "part_name": "wide_comb",    "overrides": {} },
+    { "variant_id": "C_narrow_01", "part_name": "narrow_comb",  "overrides": {} },
+    { "variant_id": "C_round_01",  "part_name": "round_handle", "overrides": { "tip_diameter_mm": 2.5 } },
+    { "variant_id": "C_flat_01",   "part_name": "flat_handle",  "overrides": {} },
+    { "variant_id": "C_double_01", "part_name": "double_handle","overrides": {} }
+  ]
+}

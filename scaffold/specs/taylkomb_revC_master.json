@@ -1,0 +1,100 @@
+{
+  "project": "TAYLKOMB",
+  "revision": "RevC_connector_optimization",
+  "units": "mm",
+  "architecture": "integrated_dovetail_ball_detent",
+  "locked_datums": {
+    "connector_block_geometry_mm": {
+      "width": 61.0,
+      "height": 45.2,
+      "depth": 20.32
+    },
+    "connector_cross_section_mm": {
+      "width": 16.0,
+      "height": 8.0
+    },
+    "feature_thickness_mm": 5.08,
+    "comb_body_length_mm": 208.01,
+    "comb_spine_depth_mm": 18.8,
+    "comb_connector_protrusion_mm_range": [20.35, 20.79],
+    "handle_connector_depth_mm": 20.32
+  },
+  "materials": {
+    "comb_heads": {
+      "primary": "PPS-CF40"
+    },
+    "handles": {
+      "primary": "316L_stainless_hollow",
+      "wall_thickness_mm_range": [1.2, 1.5]
+    }
+  },
+  "connector": {
+    "dovetail_angle_deg": 60.0,
+    "rail_profile_mm": {
+      "width": 8.0,
+      "height": 5.08
+    },
+    "engagement_length_mm_target": 20.0,
+    "engagement_length_mm_range": [18.0, 22.0],
+    "clearance_per_side_mm_range": [0.10, 0.15],
+    "ball_diameter_mm": 3.0,
+    "ball_protrusion_mm": 0.8,
+    "detent_pocket_diameter_mm": 3.5,
+    "detent_pocket_depth_mm": 0.8,
+    "detent_force_N_range": [8.0, 12.0],
+    "lead_in_chamfer": {
+      "angle_deg": 30.0,
+      "length_mm": 1.0
+    },
+    "hair_shed_chamfer": {
+      "size_mm": 0.5,
+      "angle_deg": 45.0
+    },
+    "seam_step_max_mm": 0.15,
+    "cycle_life_target_min": 15000
+  },
+  "part_targets": {
+    "main_comb": {
+      "oal_mm_target": 225.0,
+      "root_fillet_mm_target": 0.8
+    },
+    "wide_comb": {
+      "oal_mm_target": 223.0
+    },
+    "narrow_comb": {
+      "oal_mm_target": 198.0
+    },
+    "round_handle": {
+      "oal_mm_target": 185.0,
+      "tail_length_mm_target": 130.0,
+      "tip_diameter_mm_target": 2.3,
+      "tip_diameter_mm_range": [1.8, 2.5]
+    },
+    "flat_handle": {
+      "oal_mm_target": 190.0,
+      "work_section_mm_target": 130.0
+    },
+    "double_handle": {
+      "oal_mm_target": 190.0,
+      "fork_length_mm_target": 130.0,
+      "outer_width_mm_target": 35.0,
+      "prong_section_mm_target": {
+        "x": 8.0,
+        "y": 9.0
+      }
+    }
+  },
+  "assembly_targets": {
+    "assembled_length_mm_range": [280.0, 320.0],
+    "assembled_weight_g_target_range": [40.0, 58.0],
+    "assembled_weight_g_max": 70.0
+  },
+  "rules": {
+    "allow_changes_to_locked_datums": false,
+    "require_step_export": true,
+    "require_measurement_report": true,
+    "reject_if_seam_step_gt_mm": 0.15,
+    "reject_if_clearance_outside_range": true,
+    "reject_if_tip_diameter_outside_range": true
+  }
+}

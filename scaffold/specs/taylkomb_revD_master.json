@@ -1,0 +1,52 @@
+{
+  "project": "TAYLKOMB",
+  "revision": "RevD_vertical_ball_stud",
+  "units": "mm",
+  "architecture": "vertical_ball_stud_cross_detent",
+  "locked_datums": {
+    "comb_silhouette_mm": { "width": 32.0, "thickness": 6.7 },
+    "m_cutout_mm":        { "peak_to_peak": 36.0, "depth_from_spine": 18.0 },
+    "socket_mm":          { "diameter": 4.10, "depth": 13.0, "clearance_per_side": 0.05 },
+    "stem_mm":            { "diameter": 4.00, "length": 14.00, "ball_head_diameter": 5.00, "groove_diameter": 3.20, "groove_length": 1.00, "groove_offset_below_ball": 0.40, "d_profile_chord": 3.20 },
+    "ball_plunger":       { "ball_diameter": 3.00, "spring_force_N_min": 8.0, "spring_force_N_max": 12.0 },
+    "release_button_mm":  { "diameter": 6.00, "travel": 0.80, "protrusion_rest": 0.30 },
+    "seam_step_max_mm":   0.10
+  },
+  "materials": {
+    "comb_heads":  { "primary": "PPS-CF40" },
+    "stems":       { "primary": "316L_stainless" },
+    "handles":     { "primary": "316L_stainless_solid" }
+  },
+  "connector_forces_N": {
+    "insertion_target":  [10, 15],
+    "retention_target":  [30, 40],
+    "release_target":    [1, 2],
+    "cycle_life_min":    15000
+  },
+  "part_targets": {
+    "main_comb":     { "oal_mm_target": 202.0, "oal_mm_range": [198, 205], "tooth_pattern": "mixed_fine_wide_plus_pick" },
+    "wide_comb":     { "oal_mm_target": 178.0, "tooth_pitch_mm_target": 5.0, "tooth_count": 24 },
+    "narrow_comb":   { "oal_mm_target": 178.0, "tooth_pitch_mm_target": 2.0, "tooth_count": 60 },
+    "round_handle":  { "oal_mm_target": 158.0, "tail_length_mm": 130.0, "tip_diameter_mm_target": 2.3, "tip_diameter_mm_range": [1.8, 2.5] },
+    "flat_handle":   { "oal_mm_target": 165.0, "cross_section_mm": [10.0, 5.0] },
+    "double_handle": { "oal_mm_target": 158.0, "fork_outer_width_mm": 32.0, "fork_length_mm": 125.0, "fork_root_fillet_mm": 1.5 }
+  },
+  "assembly_targets": {
+    "assembled_length_mm_range": [340, 380],
+    "assembled_length_mm_reject_below": 320,
+    "assembled_length_mm_reject_above": 410,
+    "assembled_weight_g_target_range": [26, 46],
+    "assembled_weight_g_max": 56
+  },
+  "rules": {
+    "allow_changes_to_locked_datums": false,
+    "require_step_export": true,
+    "require_measurement_report": true,
+    "reject_if_seam_step_gt_mm": 0.10,
+    "reject_if_clearance_outside_range": true,
+    "reject_if_tip_diameter_outside_range": true,
+    "reject_if_insertion_force_outside_range": true,
+    "reject_if_retention_force_outside_range": true,
+    "reject_if_stem_or_socket_dims_out_of_tolerance": true
+  }
+}

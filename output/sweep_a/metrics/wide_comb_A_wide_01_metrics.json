@@ -1,0 +1,20 @@
+{
+  "bounding_box_mm": {
+    "xlen": 178.0,
+    "ylen": 46.29128784747793,
+    "zlen": 16.5,
+    "xmin": -89.0,
+    "xmax": 89.0,
+    "ymin": -30.29128784747792,
+    "ymax": 16.00000000000001,
+    "zmin": -7.0,
+    "zmax": 9.5
+  },
+  "volume_mm3": 25460.799,
+  "estimated_mass_g": 12.476,
+  "clearance_per_side_mm": 0.05,
+  "seam_step_mm": 0.1,
+  "engagement_length_mm": 14.0,
+  "tip_diameter_mm": 0.0,
+  "outer_width_mm": 0.0
+}

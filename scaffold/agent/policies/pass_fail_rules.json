@@ -1,0 +1,19 @@
+{
+  "step_export_required": true,
+  "seam_step_max_mm": 0.10,
+  "stem_diameter_mm_tolerance": [3.97, 4.03],
+  "socket_diameter_mm_tolerance": [4.07, 4.13],
+  "ball_head_diameter_mm_tolerance": [4.95, 5.05],
+  "d_profile_chord_mm_tolerance": [3.15, 3.25],
+  "insertion_force_N_range": [10, 15],
+  "retention_force_N_range": [30, 40],
+  "release_force_N_range": [1, 2],
+  "round_handle_tip_diameter_mm": [1.8, 2.5],
+  "double_handle_fork_outer_width_mm_min": 25.0,
+  "cycle_life_target_min": 15000,
+  "assembled_length_mm_warn_below": 340,
+  "assembled_length_mm_warn_above": 380,
+  "assembled_length_mm_reject_below": 320,
+  "assembled_length_mm_reject_above": 410,
+  "assembled_weight_g_max": 56
+}

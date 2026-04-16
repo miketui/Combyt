@@ -1,0 +1,8 @@
+{
+  "comb_silhouette_mm": { "width": 32.0, "thickness": 6.7 },
+  "m_cutout_mm":        { "peak_to_peak": 36.0, "depth_from_spine": 18.0 },
+  "socket_mm":          { "diameter": 4.10, "depth": 13.0 },
+  "stem_mm":            { "diameter": 4.00, "length": 14.00, "ball_head_diameter": 5.00, "groove_diameter": 3.20, "d_profile_chord": 3.20 },
+  "seam_step_max_mm":   0.10,
+  "allow_changes": false
+}

@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "checks": {
+    "clearance_per_side": true,
+    "seam_step": true,
+    "engagement_length": true,
+    "part_length_band": true,
+    "part_weight_limit": true
+  },
+  "failures": []
+}

@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "taylkomb-cad": {
+      "command": "${PWD}/.venv/bin/python",
+      "args": ["-m", "taylkomb_mcp.server", "--transport", "stdio"],
+      "env": {
+        "PYTHONPATH": "${PWD}/src",
+        "TAYLKOMB_PROJECT_ROOT": "${PWD}",
+        "TAYLKOMB_DATA_DIR": "${PWD}/data",
+        "TAYLKOMB_DEFAULT_SPEC": "${PWD}/specs/taylkomb_revD_master.json"
+      }
+    }
+  }
+}
