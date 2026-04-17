@@ -7,7 +7,7 @@ from typing import Any
 from taylkomb_mcp.cad.assemblies import assembly_metrics, build_assembly
 from taylkomb_mcp.cad.connector_common import bounding_box, export_shape, volume_mm3
 from taylkomb_mcp.cad.parts import DENSITY_G_PER_MM3, build_part
-from taylkomb_mcp.io_utils import ensure_dirs, read_json, timestamp, write_json, write_text
+from taylkomb_mcp.io_utils import ensure_dirs, project_root, read_json, timestamp, write_json, write_text
 from taylkomb_mcp.spec_models import TaylkombSpec, coerce_spec_override, load_spec
 from taylkomb_mcp.validation import rank_variants, validate_measurements
 
@@ -218,6 +218,33 @@ def export_release_pack_logic(variant_id: str, include: list[str]) -> dict[str, 
     archive_base = paths["reports"] / f"release_{variant_id}_{timestamp()}"
     archive_path = shutil.make_archive(str(archive_base), "zip", root_dir=staging)
     return {"variant_id": variant_id, "archive_path": archive_path, "files": copied}
+
+
+def render_drawing_pdf_logic(
+    variant_id: str,
+    spec_path: str | None = None,
+    out_dir: str | None = None,
+) -> dict[str, Any]:
+    """Render the Rev D v3 drawing pack (PDF + PNG + DXFs) for a variant.
+
+    Lazy-imports taylkomb_mcp.drawing so the MCP server stays importable when
+    heavy deps (matplotlib/reportlab/ezdxf) are missing.
+    """
+    from taylkomb_mcp import drawing  # heavy deps — deferred
+
+    root = project_root()
+    spec = Path(spec_path) if spec_path else root / "specs" / "taylkomb_revD_master.json"
+    out = Path(out_dir) if out_dir else root / "output" / "sweep_a" / "drawings"
+    out.mkdir(parents=True, exist_ok=True)
+
+    try:
+        return drawing.render_drawing_pdf(
+            variant_id=variant_id,
+            spec_path=spec,
+            out_dir=out,
+        )
+    except RuntimeError as exc:
+        return {"success": False, "variant_id": variant_id, "error": str(exc)}
 
 
 def _build_markdown_report(
