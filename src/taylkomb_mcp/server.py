@@ -16,6 +16,7 @@ from taylkomb_mcp.server_logic import (
     export_release_pack_logic,
     generate_connector_variant_logic,
     measure_geometry_logic,
+    render_drawing_pdf_logic,
     validate_connector_rules_logic,
 )
 
@@ -94,6 +95,19 @@ def _build_mcp(host: str = "127.0.0.1", port: int = 3333) -> FastMCP:
     def export_release_pack(variant_id: str, include: list[str]) -> dict[str, Any]:
         """Zip release artifacts for a chosen variant."""
         return export_release_pack_logic(variant_id=variant_id, include=include)
+
+    @server.tool()
+    def render_drawing_pdf(
+        variant_id: str,
+        spec_path: str | None = None,
+        out_dir: str | None = None,
+    ) -> dict[str, Any]:
+        """Render the Rev D v3 drawing pack (PDF + PNG + 4 DXF views) for a variant."""
+        return render_drawing_pdf_logic(
+            variant_id=variant_id,
+            spec_path=spec_path,
+            out_dir=out_dir,
+        )
 
     return server
 
