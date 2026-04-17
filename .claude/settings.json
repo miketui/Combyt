@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(*)",
+      "Write(*)",
+      "Edit(*)",
+      "Read(*)",
+      "Agent(*)",
+      "mcp__github__*"
+    ]
+  },
+  "env": {
+    "TAYLKOMB_PROJECT": "Combyt",
+    "TAYLKOMB_REV": "D",
+    "TAYLKOMB_SOCKET_OD": "4.10",
+    "TAYLKOMB_SOCKET_DEPTH": "13.0",
+    "TAYLKOMB_STEM_OD": "4.00",
+    "TAYLKOMB_STEM_LENGTH": "14.0",
+    "TAYLKOMB_BALL_DIA": "5.0",
+    "TAYLKOMB_GROOVE": "3.20",
+    "TAYLKOMB_COMB_W": "32.0",
+    "TAYLKOMB_COMB_H": "6.7",
+    "TAYLKOMB_SEAM_MAX": "0.10"
+  },
+  "hooks": {
+    "PreCommit": [
+      {
+        "command": "grep -r 'sk-ant-\\|AKIA\\|\\.env' --include='*.py' --include='*.json' --include='*.sh' . && echo 'SECRET DETECTED - ABORTING' && exit 1 || exit 0"
+      }
+    ]
+  }
+}
